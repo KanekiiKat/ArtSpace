@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+    <string name="sololevelingTitle">Solo Leveling</string>
+    <string name="callofthenigthTitle">Call of the Nigth</string>
+    <string name="attackontitanTitle">Attack on Titan</string>
+    <string name="jujutsukaisenTitle">Jujutsu Kaisen</string>
+    <string name="mirainikkiTitle">Mirai Nikki</string>
+    <string name="rezeroTitle">Re:Zero</string>
+    <string name="swordartonlineTitle">Sword Art Online</string>
+    <string name="shangrilafrontierTitle">Shangri-la Frontier</string>
+    <string name="tokyoghoulTitle">Tokyo Ghoul</string>
+    <string name="tokyorevengersTitle">Tokyo Revengers</string>
+
+    <string name="sololevelingAutor">Chugong</string>
+    <string name="callofthenigthAutor">Kotoyama</string>
+    <string name="attackontitanAutor">Hajime Isayama</string>
+    <string name="jujutsukaisenAutor">Gege Akutami</string>
+    <string name="mirainikkiAutor">Sakae Esuno</string>
+    <string name="rezeroAutor">Tappei Nagatsuki</string>
+    <string name="swordartonlineAutor">Reki Kawahara</string>
+    <string name="shangrilafrontierAutor">Ryosuke Fuji</string>
+    <string name="tokyoghoulAutor">Sui Ishida</string>
+    <string name="tokyorevengersAutor">Ken Wakui</string>
+
 </resources>
