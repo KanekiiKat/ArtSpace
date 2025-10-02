@@ -6,6 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -99,12 +101,15 @@ fun DinamicImage(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
 
     ) {
+        Column(modifier = modifier.background(color = Color.Gray),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,) {
 
         Image(
             painter = painterResource(imageResource[imageNumber]),
             contentDescription = "Image not hidden",
             alignment = Alignment.Center,
-            modifier = modifier.size(300.dp),
+            modifier = modifier.size(300.dp).padding(top = 20.dp).fillMaxSize(),
 
             )
         Text(
@@ -113,15 +118,16 @@ fun DinamicImage(modifier: Modifier = Modifier) {
             fontSize = 36.sp,
             modifier = modifier.padding(top = 20.dp)
 
-            )
+                )
         Text(
             text = stringResource(animesAutorResource[imageNumber]),
             textAlign = TextAlign.Center,
             fontSize = 20.sp,
-            modifier = modifier.padding(5.dp)
+            modifier = modifier.padding(top = 5.dp)
             )
+
         Row (
-            modifier = modifier.padding(vertical = 40.dp)
+            modifier = modifier.padding(vertical = 20.dp)
         ){
             Button(
                 colors = ButtonColors(
@@ -145,7 +151,7 @@ fun DinamicImage(modifier: Modifier = Modifier) {
 
 
             ) { Text("Next")}
-        }
+        } }
 
     }
 }
