@@ -93,6 +93,7 @@ fun DinamicImage(modifier: Modifier = Modifier) {
         R.string.tokyoghoulAutor,
         R.string.tokyorevengersAutor
     )
+
     
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -100,11 +101,22 @@ fun DinamicImage(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
 
     ) {
+
+
         Column(modifier = modifier
             .background(color = Color.Gray)
             .border(width = 3.dp, color = Color.Black),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,) {
+
+            Text(
+                text = stringResource(R.string.app_name),
+                fontSize = 20.sp,
+                textAlign = TextAlign.Start,
+                color = Color.LightGray,
+                modifier = modifier.background(Color.DarkGray).border(width = 1.dp, color=Color.Black)
+
+            )
             Box(
                 modifier = Modifier
                     .padding(start = 10.dp, end = 10.dp, top = 10.dp, bottom = 20.dp)
@@ -122,7 +134,9 @@ fun DinamicImage(modifier: Modifier = Modifier) {
             Column (
                 modifier = modifier
                     .padding(10.dp)
-                    .background(color = Color.DarkGray),
+                    .background(color = Color.DarkGray)
+                    .width(250.dp)
+                    .height(200.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
 
@@ -131,6 +145,8 @@ fun DinamicImage(modifier: Modifier = Modifier) {
                     text = stringResource(animesTitleResource[imageNumber]),
                     textAlign = TextAlign.Center,
                     fontSize = 36.sp,
+                    color = Color.White,
+                    lineHeight = 30.sp,
                     modifier = modifier.padding(horizontal = 2.dp)
 
                         )
@@ -138,7 +154,8 @@ fun DinamicImage(modifier: Modifier = Modifier) {
                     text = stringResource(animesAutorResource[imageNumber]),
                     textAlign = TextAlign.Center,
                     fontSize = 20.sp,
-                    modifier = modifier.padding(bottom = 2.dp)
+                    color = Color.LightGray,
+                    modifier = modifier
                     )
             }
 
