@@ -1,6 +1,5 @@
 package com.example.artspace
 
-import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -101,33 +100,51 @@ fun DinamicImage(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
 
     ) {
-        Column(modifier = modifier.background(color = Color.Gray),
+        Column(modifier = modifier
+            .background(color = Color.Gray)
+            .border(width = 3.dp, color = Color.Black),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,) {
-
-        Image(
-            painter = painterResource(imageResource[imageNumber]),
-            contentDescription = "Image not hidden",
-            alignment = Alignment.Center,
-            modifier = modifier.size(300.dp).padding(top = 20.dp).fillMaxSize(),
-
+            Box(
+                modifier = Modifier
+                    .padding(start = 10.dp, end = 10.dp, top = 10.dp, bottom = 20.dp)
+                    .background(Color.DarkGray)
             )
-        Text(
-            text = stringResource(animesTitleResource[imageNumber]),
-            textAlign = TextAlign.Center,
-            fontSize = 36.sp,
-            modifier = modifier.padding(top = 20.dp)
 
+            {
+                Image(
+                    painter = painterResource(imageResource[imageNumber]),
+                    contentDescription = "Image not hidden",
+                    alignment = Alignment.Center,
+                    modifier = modifier.size(300.dp).padding(all = 10.dp).fillMaxSize(),
                 )
-        Text(
-            text = stringResource(animesAutorResource[imageNumber]),
-            textAlign = TextAlign.Center,
-            fontSize = 20.sp,
-            modifier = modifier.padding(top = 5.dp)
-            )
+        }
+            Column (
+                modifier = modifier
+                    .padding(10.dp)
+                    .background(color = Color.DarkGray),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+
+            ){
+                Text(
+                    text = stringResource(animesTitleResource[imageNumber]),
+                    textAlign = TextAlign.Center,
+                    fontSize = 36.sp,
+                    modifier = modifier.padding(horizontal = 2.dp)
+
+                        )
+                Text(
+                    text = stringResource(animesAutorResource[imageNumber]),
+                    textAlign = TextAlign.Center,
+                    fontSize = 20.sp,
+                    modifier = modifier.padding(bottom = 2.dp)
+                    )
+            }
 
         Row (
-            modifier = modifier.padding(vertical = 20.dp)
+            modifier = modifier
+                .padding(bottom = 5.dp)
         ){
             Button(
                 colors = ButtonColors(
@@ -151,26 +168,27 @@ fun DinamicImage(modifier: Modifier = Modifier) {
 
 
             ) { Text("Next")}
-        } }
+        }
+        }
 
     }
 }
 
 
 fun nextImage(imageNumber: Int, imageListSize: Int): Int {
-    if (imageNumber == imageListSize - 1){
-        return 0
+    return if (imageNumber == imageListSize - 1){
+        0
     } else {
-        return imageNumber + 1
+        imageNumber + 1
     }
 }
 
 fun formerImage(imageNumber: Int, imageListSize: Int): Int{
 
-    if (imageNumber == 0){
-        return imageListSize - 1
+    return if (imageNumber == 0){
+        imageListSize - 1
     } else {
-        return imageNumber - 1
+        imageNumber - 1
     }
 }
 
